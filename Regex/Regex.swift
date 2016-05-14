@@ -60,7 +60,7 @@ public class Regex : RegexType {
     
     private static func compile(pattern:String) throws -> CompiledPattern {
         //pass options
-        return try NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.caseInsensitive)
+        return try NSRegularExpression(pattern: pattern, options: [.CaseInsensitive,.DotMatchesLineSeparators])
     }
     
     public func findAll(source:String) -> MatchSequence {
